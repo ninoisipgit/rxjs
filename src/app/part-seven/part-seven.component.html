@@ -1,0 +1,18 @@
+<div class="container">
+  <h1>Part Seven : Sending Data from Component to Component </h1>
+  <h2>Topics</h2>
+  <ul>
+      <li>Input Binding</li>
+      <li>Output Binding</li>
+      <li>Local Variable</li>
+      <li>View CHild / view Childrem</li>
+      <li>Service/li>
+  </ul>
+
+  <app-child #child [amount]="200" (amountChange)="onAmountChange($event)"></app-child>
+  <br>
+  <button class="btn btn-primary" type="button" (click)="child.changeAmount()" >Change btn from parent using child function(local variable)</button>
+  <br>
+  <br>
+  <button class="btn btn-primary" type="button" (click)="parentChange()" >Change btn from parent using child function(viewchild)</button>
+</div>

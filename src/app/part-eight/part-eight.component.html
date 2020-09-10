@@ -1,0 +1,20 @@
+<div class="container">
+  <h1>Part Eight</h1>
+  <h2>Topics</h2>
+  <ul>
+      <li>Simple Search</li>
+  </ul>
+
+  <div class="input-group">
+    <div class="input-group-prefend">
+      <span class="input-group-text" id="basic-addon1">
+        <span class="fa fa-search"></span>
+      </span>
+    </div>
+    <input autofocus placeholder="search" type="text" class="form-control" autocomplete="off" name="search" [(ngModel)]="value">
+    <ul class="list-group">
+      <li class="list-group-item" *ngFor="let person of people | search:value">{{person.name}}</li>
+      <li class="list-group-item" *ngIf="people.length > 0 && value != ''">No Result</li>
+    </ul>
+  </div>
+</div>

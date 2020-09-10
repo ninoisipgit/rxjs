@@ -1,0 +1,32 @@
+<div class="container">
+  <h1>Part Six</h1>
+  <h2>Topics</h2>
+  <ul>
+      <li>built in pipes</li>
+      <li>chaining pipes</li>
+      <li>Custom pipes</li>
+      <li>Manually call a pipes</li>
+      <li>pure pipes</li>
+      <li>impure pipes</li>
+  </ul>
+
+  <input type="text" class="form-control" name="person" (ngModelChange)="person = $event" [ngModel]="person | uppercase | titlecase">
+
+  <input type="text" class="form-control" name="today" [value]="today| date:'MM/dd/yyyy'" >
+
+  <h2>Cars</h2>
+
+  <select name="color" [(ngModel)]="color" class="form-control">
+    <option value="">None</option>
+    <option *ngFor="let carColor of colors" [value]="carColor">{{carColor}}</option>
+  </select>
+
+  <input type="text" class="form-control" name="name" [(ngModel)]="name"/>
+  <ul class="list-group">
+    <li class="list-group-item" *ngFor="let car of cars | car:color:name">{{car.name}}-{{car.color}}</li>
+  </ul>
+
+  <button type="button" (click)="addCar()" class="btn btn-succes">Add  Car</button>
+
+
+</div>
